@@ -1,9 +1,17 @@
 {
-    "name": "RaXML Development Container",
+    "name": "RAxML Dev Container",
     "build": {
-        "dockerfile": "Dockerfile"
+        "dockerfile": "Dockerfile",
+        "context": ".."
     },
-    "postCreateCommand": "git clone https://github.com/stamatak/standard-RAxML /bin/ && cd /bin/standard-RAxML && make -f Makefile.AVX2.PTHREADS.gcc"
-}
-
+    "runArgs": ["--init"],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "ms-vscode.cpptools",
+        "ms-azuretools.vscode-docker"
+    ],
+    "postCreateCommand": "git clone https://github.com/stamatak/standard-RAxML.git && cd standard-RAxML && make -f Makefile.AVX2.PTHREADS.gcc",
+    "remoteUser": "vscode"
 }
