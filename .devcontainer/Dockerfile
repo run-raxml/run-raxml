@@ -28,5 +28,8 @@ USER $USERNAME
 # Set the working directory
 WORKDIR /home/$USERNAME
 
+# Ensure bash is the default shell
+RUN chsh -s /bin/bash $USERNAME
+
 # Run the build script
 CMD ["bash"]
