@@ -12,6 +12,6 @@
         "ms-vscode.cpptools",
         "ms-azuretools.vscode-docker"
     ],
-    "postCreateCommand": "git clone https://github.com/stamatak/standard-RAxML.git && cd standard-RAxML && make -f Makefile.AVX2.PTHREADS.gcc",
+    "postCreateCommand": "git clone https://github.com/stamatak/standard-RAxML.git && cd standard-RAxML && make -f Makefile.AVX2.PTHREADS.gcc && echo 'export PATH=$PATH:/workspaces/run-raxml/standard-RAxML' >> /home/vscode/.bashrc",
     "remoteUser": "vscode"
 }
